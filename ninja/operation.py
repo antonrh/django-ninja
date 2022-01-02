@@ -206,7 +206,7 @@ class Operation:
                     i["loc"] = (model._param_source,) + model._flatten_map_reverse.get(
                         i["loc"], i["loc"]
                     )
-                    items.append(dict(i))
+                    items.append(cast(DictStrAny, i))
                 errors.extend(items)
         if errors:
             raise ValidationError(errors)
